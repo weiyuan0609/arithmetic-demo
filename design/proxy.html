@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>代理模式</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		/*
+			代理模式（Proxy），为其他对象提供一种代理以控制对这个对象的访问。
+
+			代理模式使得代理对象控制具体对象的引用。代理几乎可以是任何对象：文件，资源，内存中的对象，或者是一些难以复制的东西.
+
+			
+		*/
+		var girl = function (name) {
+		    this.name = name;
+		};
+
+		var dudu = function (girl) {
+		    this.girl = girl;
+		    this.sendGift = function (gift) {
+		        alert("Hi " + girl.name + ", dudu送你一个礼物：" + gift);
+		    }
+		};
+
+		var proxyTom = function (girl) {
+		    this.girl = girl;
+		    this.sendGift = function (gift) {
+		        (new dudu(girl)).sendGift(gift); // 替dudu送花咯
+		    }
+		};
+
+		var proxy = new proxyTom(new girl("酸奶小妹"));
+		proxy.sendGift("999朵玫瑰");
+	</script>
+</body>
+</html>

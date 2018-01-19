@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo</title>
+	<meta name="description" content="左侧自适应，右侧固定宽度 250px">
+	<style type="text/css">
+		html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,table,caption,th,td,form,input,button,textarea {
+		    margin: 0;
+		    padding: 0;
+		}
+		.left {
+			background-color: blue;
+			height: 100px;
+		}
+		.right {
+			width: 250px;
+			height: 100px;
+			background-color: yellow;
+		}
+		.layout {
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+
+	<!-- float -->
+	<section class="layout">
+		<style>
+			.layout-float {
+				*zoom:1
+			}
+			.layout-float:after {
+				display: table;
+				content: "";
+				clear: both
+			}
+			.layout-float .right {
+				float: right;
+			}
+		</style>
+		<article class="layout-float">
+			<div class="right">
+				
+			</div>
+			<div class="left">
+				<p>左侧自适应</p>
+				<p>左侧自适应</p>
+				<p>左侧自适应</p>
+				<p>左侧自适应</p>
+				<p>左侧自适应</p>
+				<p>左侧自适应</p>
+			</div>
+		</article>
+	</section>
+
+	<!-- absolute -->
+	<section class="layout">
+		<style>
+			.layout-absolute {
+				position: relative;
+			}
+			.layout-absolute .left {
+				margin-right: 250px;
+			}
+			.layout-absolute .right{
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+		</style>
+		<article class="layout-absolute">
+			<div class="left">
+				<p>左侧自适应</p>
+				<p>左侧自适应</p>
+				<p>左侧自适应</p>
+				<p>左侧自适应</p>
+				<p>左侧自适应</p>
+				<p>左侧自适应</p>
+			</div>
+			<div class="right">
+				
+			</div>
+		</article>
+	</section>
+
+	<!-- table-cell -->
+	<section class="layout">
+		<style>
+			.layout-table-cell {
+				display: table;
+			}
+			.layout-table-cell .left {
+				display: table-cell;
+				width: 100%;
+				vertical-align: top;
+			}
+			.layout-table-cell .right{
+				float: right;
+			}
+		</style>
+		<artical class="layout-table-cell">
+			<div class="left">
+				<p>左侧自适应</p>
+				<p>左侧自适应</p>
+				<p>左侧自适应</p>
+				<p>左侧自适应</p>
+				<p>左侧自适应</p>
+				<p>左侧自适应</p>
+			</div>
+			<div class="right">
+				
+			</div>
+		</artical>
+	</section>
+
+	<!-- flex -->
+	<section class="layout">
+		<style>
+			.layout-flex {
+				display: flex;
+			}
+			.layout-flex .left {
+				flex: 1;
+			}
+		</style>
+		<artical class="layout-flex">
+			<div class="left">
+				<p>左侧自适应</p>
+				<p>左侧自适应</p>
+				<p>左侧自适应</p>
+				<p>左侧自适应</p>
+				<p>左侧自适应</p>
+				<p>左侧自适应</p>
+			</div>
+			<div class="right">
+				
+			</div>
+		</artical>
+	</section>
+
+	<!-- grid -->
+	<section class="layout">
+		<style>
+			.layout-grid {
+				display: grid;
+				grid-template-rows: 100%;
+				grid-template-columns: auto 250px;
+			}
+		</style>
+		<artical class="layout-grid">
+			<div class="left">
+				<p>左侧自适应</p>
+				<p>左侧自适应</p>
+				<p>左侧自适应</p>
+				<p>左侧自适应</p>
+				<p>左侧自适应</p>
+				<p>左侧自适应</p>
+			</div>
+			<div class="right">
+				
+			</div>
+		</artical>
+	</section>
+
+</body>
+</html>

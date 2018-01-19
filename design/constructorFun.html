@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>构造函数模式</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+	/*
+		构造函数用于创建特定类型的对象——不仅声明了使用的对象，构造函数还可以接受参数以便第一次创建对象的时候设置对象的成员值。你可以自定义自己的构造函数，然后在里面声明自定义类型对象的属性或方法.
+		在JavaScript里，构造函数通常是认为用来实现实例的，JavaScript没有类的概念，但是有特殊的构造函数。通过new关键字来调用定义的构造函数，你可以告诉JavaScript你要创建一个新对象并且新对象的成员声明都是构造函数里定义的。在构造函数内部，this关键字引用的是新创建的对象
+	*/
+
+	// 基本用法
+	function Car(model, year, miles) {
+		this.model = model;
+		this.year = year;
+		this.miles = miles;
+		this.output= formatCar;
+	}
+
+	function formatCar() {
+		return this.model + "走了" + this.miles + "公里";
+	}
+
+	// 构造函数与原型
+	function Car(model, year, miles) {
+		this.model = model;
+		this.year = year;
+		this.miles = miles;
+	}
+
+	Car.prototype.output= function () {
+		return this.model + "走了" + this.miles + "公里";
+	};
+
+
+
+	var tom = new Car("大叔", 2009, 20000);
+	var dudu = new Car("Dudu", 2010, 5000);
+
+	console.log(tom.output());
+	console.log(dudu.output());
+
+	</script>
+</body>
+</html>

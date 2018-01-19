@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>。。。</title>
+	<style>
+		body{
+			min-width: 700px;
+		}
+		header,footer{
+	        border: 1px solid #333;
+	        background: #aaa;
+	        text-align: center;
+	    }
+	    footer{
+	    	clear: both;
+	    }
+	</style>
+</head>
+<body>
+	<!-- 圣杯布局 和 双飞翼布局 -->
+	<section class="layout">
+		<style>
+			.left,.middle,.right{
+				position: relative;
+				float: left;
+				min-height: 120px;
+			}
+			.layout-1{
+				padding: 0 220px 0 200px;
+				overflow: hidden;
+			}
+			.left{
+		        margin-left: -100%;
+		        left: -200px;
+		        width: 200px;
+		        background: red;
+		    }
+		    .right{
+		        margin-left: -220px;
+		        right: -220px;
+		        width: 220px;
+		        background: green;
+		    }
+		    .middle{
+		        width: 100%;
+		        background: blue;
+		        word-break: break-all;
+    		}
+		</style>
+		<header>header</header>
+		<article class="layout-1">
+			<div class="middle">middle</div>
+  			<div class="left">left</div>
+  			<div class="right">right</div>
+		</article>
+		<footer>footer</footer>
+	</section>
+
+	<section class="layout">
+		<style>
+			 .sub,.main,.extra{
+		        float: left;
+		        min-height: 130px;
+		    }
+		    .sub{
+		        margin-left: -100%;
+		        width: 200px;
+		        background: red;
+		    }
+		    .extra{
+		        margin-left: -220px;
+		        width: 220px;
+		        background: blue;
+		    }
+		    .main{
+		        width: 100%;
+		    }
+		    .main-inner{
+		        margin-left: 200px;
+		        margin-right: 220px;
+		        min-height: 130px;
+		        background: green;
+		        word-break: break-all;
+		    }
+		</style>
+		<header>header</header>
+
+		<div class="main">
+			<div class="main-inner">main</div>
+		</div>
+	    <div class="sub">sub</div>
+      	<div class="extra">extra</div>
+
+      	<footer>footer</footer>
+	</section>
+	
+
+</body>
+</html>
